@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var a = "window"
+    console.log(window.a)    //window
+
+    let b = "local"
+    console.log(window.b)  //undefined
+
+    const obj = {
+        a: "obj",
+        say() {
+            console.log(this.a)
+        }
+    }
+
+    obj.say()  //obj
+
+    let fn = obj.say
+    fn()  //window
+
+    setTimeout(()=>{obj.say()})  //obj
+    setTimeout(obj.say)  //window
+
+</script>
+
+</html>
